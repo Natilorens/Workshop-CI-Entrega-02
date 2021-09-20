@@ -20,7 +20,6 @@ backend-build:
   script:
     - npm run build
 
-
 frontend-test:
   image: node:latest
   stage: test
@@ -29,3 +28,12 @@ frontend-test:
     - yarn
   script:
     - yarn test
+
+backend-test:
+  image: node:latest
+  stage: test
+  before_script:
+    - cd backend
+    - npm install
+  script:
+    - npm run unittest
