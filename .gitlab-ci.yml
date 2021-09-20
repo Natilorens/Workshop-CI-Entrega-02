@@ -8,3 +8,11 @@ frontend-build:
   stage: build
   script:
     - yarn
+
+backend-build:
+  image: node:latest
+  stage: build
+  script:
+    - npm run build
+
+
