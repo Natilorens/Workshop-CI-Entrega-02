@@ -12,6 +12,9 @@ frontend-build:
 backend-build:
   image: node:latest
   stage: build
+  before_script:
+    - cd backend
+  
   script:
     - npm run build
 
