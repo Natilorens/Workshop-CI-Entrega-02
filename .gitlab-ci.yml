@@ -14,7 +14,7 @@ backend-build:
   stage: build
   before_script:
     - cd backend
-  
+    - npm install
   script:
     - npm run build
 
