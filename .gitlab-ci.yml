@@ -1,9 +1,11 @@
+# Gitlab repository link: https://github.com/Natilorens/Workshop-CI-Entrega-02
+
 stages:
   - build
   - test
   - deploy
 
-  
+
 frontend-build:
   image: node:latest
   stage: build
