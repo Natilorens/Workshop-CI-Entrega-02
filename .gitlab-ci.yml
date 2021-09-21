@@ -3,6 +3,7 @@ stages:
   - test
   - deploy
 
+  
 frontend-build:
   image: node:latest
   stage: build
@@ -51,8 +52,13 @@ frontend-deploy:
     - docker push natilorens/frontend
 
 
-
-
+backend-deploy:
+  stage: deploy
+  before_script:
+    - docker login -u "$DOCKER_USER" -p "$DOCKER_PASSWORD"
+  script: 
+    - docker build -t natilorens/backend ./backend -f ./backend/Dockerfile
+    - docker push natilorens/backend
 
 
 
