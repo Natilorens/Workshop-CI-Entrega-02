@@ -37,3 +37,21 @@ backend-test:
     - npm install
   script:
     - npm run unittest
+
+image: docker:latest
+services:
+  - docker:dind
+
+frontend-deploy:
+  stage: deploy
+  before_script:
+    - docker login -u "$DOCKER_USER" -p "$DOCKER_PASSWORD"
+  script: 
+    - docker push natilorens/frontend
+
+
+
+
+
+
+
