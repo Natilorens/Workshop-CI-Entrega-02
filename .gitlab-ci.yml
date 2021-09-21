@@ -47,6 +47,7 @@ frontend-deploy:
   before_script:
     - docker login -u "$DOCKER_USER" -p "$DOCKER_PASSWORD"
   script: 
+    - docker build -t natilorens/frontend .
     - docker push natilorens/frontend
 
 
